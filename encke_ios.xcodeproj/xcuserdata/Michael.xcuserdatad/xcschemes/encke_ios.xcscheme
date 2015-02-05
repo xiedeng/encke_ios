@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4CE4F39D1A2E01F300EFCB8C"
-               BuildableName = "encke_ios.app"
+               BuildableName = "GuideBang.app"
                BlueprintName = "encke_ios"
                ReferencedContainer = "container:encke_ios.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CE4F39D1A2E01F300EFCB8C"
-            BuildableName = "encke_ios.app"
+            BuildableName = "GuideBang.app"
             BlueprintName = "encke_ios"
             ReferencedContainer = "container:encke_ios.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CE4F39D1A2E01F300EFCB8C"
-            BuildableName = "encke_ios.app"
+            BuildableName = "GuideBang.app"
             BlueprintName = "encke_ios"
             ReferencedContainer = "container:encke_ios.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CE4F39D1A2E01F300EFCB8C"
-            BuildableName = "encke_ios.app"
+            BuildableName = "GuideBang.app"
             BlueprintName = "encke_ios"
             ReferencedContainer = "container:encke_ios.xcodeproj">
          </BuildableReference>

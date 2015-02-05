@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DD0FD73D-AB4F-4B63-91FB-F411B3EA3901</string>
+	<key>IDESourceControlProjectName</key>
+	<string>encke_ios</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8AE060D34365EAD70E945733560855C5830FA44F</key>
+		<string>https://github.com/xiedeng/encke_ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>encke_ios.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8AE060D34365EAD70E945733560855C5830FA44F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xiedeng/encke_ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8AE060D34365EAD70E945733560855C5830FA44F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8AE060D34365EAD70E945733560855C5830FA44F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>encke_ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
