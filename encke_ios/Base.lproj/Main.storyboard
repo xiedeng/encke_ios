@@ -54,7 +54,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="XB0-bU-I5l" eventType="touchUpInside" id="geZ-ij-Zqj"/>
-                                    <segue destination="uo5-CD-7Ck" kind="push" id="g7q-qu-clt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV5-yg-QQf">

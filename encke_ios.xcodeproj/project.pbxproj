@@ -29,6 +29,7 @@
 		4C53CD4A1A4AA254003CD718 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53CD451A4AA254003CD718 /* RECommonFunctions.m */; };
 		4C53CD4B1A4AA254003CD718 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53CD471A4AA254003CD718 /* RESideMenu.m */; };
 		4C53CD4C1A4AA254003CD718 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53CD491A4AA254003CD718 /* UIViewController+RESideMenu.m */; };
+		4C5B1E611A84454500ACF641 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C5B1E5F1A84454500ACF641 /* Main.storyboard */; };
 		4CE4F3A21A2E01F300EFCB8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE4F3A11A2E01F300EFCB8C /* Foundation.framework */; };
 		4CE4F3A41A2E01F300EFCB8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE4F3A31A2E01F300EFCB8C /* CoreGraphics.framework */; };
 		4CE4F3A61A2E01F300EFCB8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE4F3A51A2E01F300EFCB8C /* UIKit.framework */; };
@@ -109,6 +110,7 @@
 		4C53CD471A4AA254003CD718 /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
 		4C53CD481A4AA254003CD718 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
 		4C53CD491A4AA254003CD718 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		4C5B1E601A84454500ACF641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CE4F39E1A2E01F300EFCB8C /* GuideBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE4F3A11A2E01F300EFCB8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CE4F3A31A2E01F300EFCB8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -330,6 +332,7 @@
 				4C3E52161A39F1DA009E7E41 /* Utils */,
 				4CE4F3B01A2E01F300EFCB8C /* AppDelegate.h */,
 				4CE4F3B11A2E01F300EFCB8C /* AppDelegate.m */,
+				4C5B1E5F1A84454500ACF641 /* Main.storyboard */,
 				4CE4F3B91A2E01F300EFCB8C /* Images.xcassets */,
 				4CE4F3A81A2E01F300EFCB8C /* Supporting Files */,
 			);
@@ -441,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5B1E611A84454500ACF641 /* Main.storyboard in Resources */,
 				4CE4F3BA1A2E01F300EFCB8C /* Images.xcassets in Resources */,
 				4C4236581A32EDE9004C8C25 /* zbar-help.html in Resources */,
 				4C42365A1A32EDE9004C8C25 /* zbar-samples.png in Resources */,
@@ -502,6 +506,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4C5B1E5F1A84454500ACF641 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C5B1E601A84454500ACF641 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		4CE4F3AA1A2E01F300EFCB8C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
