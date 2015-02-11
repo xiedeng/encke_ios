@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpU-Jy-4oq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="27" width="320" height="582"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TcJ-1x-hB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98" y="279"/>
+            <point key="canvasLocation" x="-182" y="228"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="f4w-ff-gB2">
@@ -119,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adg-oz-fqt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="273"/>
+            <point key="canvasLocation" x="428" y="234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kca-d4-fGq">
@@ -160,7 +160,7 @@
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="设备列表" id="gF5-Oj-EFx">
-                        <barButtonItem key="leftBarButtonItem" image="zbar-back.png" id="zF1-i6-9Dw">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="zF1-i6-9Dw">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="ecm-Ac-PJB" id="Qga-bk-Exf"/>
                             </connections>
@@ -214,7 +214,7 @@
                         <color key="backgroundColor" red="1" green="0.79024568979999998" blue="0.39722655649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="本体监测" id="UWO-Dg-1EA">
-                        <barButtonItem key="leftBarButtonItem" image="zbar-back.png" id="CZA-FA-YIy">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="CZA-FA-YIy">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="2aB-1s-V9M" id="6JN-F2-AWM"/>
                             </connections>
@@ -228,7 +228,6 @@
     </scenes>
     <resources>
         <image name="ewm" width="302" height="300"/>
-        <image name="zbar-back.png" width="29" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

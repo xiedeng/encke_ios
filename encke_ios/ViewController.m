@@ -3,7 +3,7 @@
 //  encke_ios
 //
 //  Created by Michael on 14/12/2.
-//  Copyright (c) 2014年 MichealXie. All rights reserved.
+//  Copyright (c) 2014年 MichaelTse. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -22,8 +22,9 @@
 - (void)viewDidLoad
 {
     txt_password.secureTextEntry = YES;
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Stars"]]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Stars.png"]]]; 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,28 +74,50 @@
     
 }
 
+-(void) showAlert:(NSString *) message
+{
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+    [alertview show];
+}
+
 -(IBAction) login:(id)sender
 {
     NSString *loginUrl = [txt_loginUrl.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *username = [txt_username.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *password = [txt_password.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *url = [NSString stringWithFormat:@"%@/api/login?username=%@&password=%@",loginUrl,username,password];
+    if ([username isEqual: @""]) {
+        [self showAlert:@"用户名不能为空"];
+        return;
+    }
+    if ([password isEqual: @""]) {
+        [self showAlert:@"密码不能为空"];
+        return;
+    }
+    if ([loginUrl isEqual: @""]) {
+        [self showAlert:@"登录地址不能为空"];
+        return;
+    }
     NSData *data = [HttpUtils syncHttpGet:url];
     NSError *error = nil;
+    if (data == nil) {
+        [self showAlert:@"登录失败"];
+        return;
+    }
     NSDictionary *rootDIC = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     LoginInfo* loginInfo = [[LoginInfo alloc] init];
     for (NSString *key in rootDIC) {
         [loginInfo setValue:[rootDIC objectForKey:key] forKey:key];
     }
     if (loginInfo.success) {
-        // Override point for customization after application launch.
-        RootViewController *rootViewController = [[RootViewController alloc] init];
-        [self presentModalViewController:rootViewController animated:YES];
-        [self performSegueWithIdentifier:@"RootViewController" sender:self];
-        
+        // Override point for customization after application launch.Ui
+        RootViewController *rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rootController"];
+        [self presentModalViewController:rootViewController animated:YES];        
         //返回
         [self dismissModalViewControllerAnimated:YES];
        
+    }else{
+        [self showAlert:@"用户名或密码错误"];
     }
 
     
