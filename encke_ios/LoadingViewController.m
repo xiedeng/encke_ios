@@ -68,8 +68,6 @@
         // Override point for customization after application launch.Ui
         RootViewController *rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rootController"];
         [self presentModalViewController:rootViewController animated:YES];
-        //返回
-        [self dismissModalViewControllerAnimated:YES];
         
     }else{
         [self jumpLoginForm];
@@ -79,8 +77,6 @@
 - (void)jumpLoginForm {
     LoginViewController *loginView = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
     [self presentModalViewController:loginView animated:YES];
-    //返回
-    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,14 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "ZBarSDK/Headers/ZBarSDK/ZBarSDK.h"
 
+typedef void (^ablock)(NSString *str);
+
 @interface ScannerController : UIViewController<ZBarReaderDelegate>{
     UIView *_QrCodeline;
+    UIButton *openButton;
     NSTimer *_timer;
     //设置扫描画面
     UIView *_scanView;
     ZBarReaderView *_readerView;
     UINavigationItem *navigationItem;
-    int width;
+
 }
+
+@property (nonatomic, copy) ablock block;
 
 @end

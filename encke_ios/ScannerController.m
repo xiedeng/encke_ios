@@ -22,6 +22,7 @@
 
 @implementation ScannerController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"扫描二维码";
@@ -101,7 +102,7 @@
     darkView. backgroundColor = [[ UIColor blackColor ]  colorWithAlphaComponent : DARKCOLOR_ALPHA ];
     [downView addSubview :darkView];
     //用于开关灯操作的button
-    UIButton *openButton=[[ UIButton alloc ] initWithFrame : CGRectMake ( 10 , 20 , 300.0 , 40.0 )];
+    openButton=[[ UIButton alloc ] initWithFrame : CGRectMake ( 10 , 20 , 300.0 , 40.0 )];
     [openButton setTitle : @"开启闪光灯" forState: UIControlStateNormal ];
     [openButton setTitleColor :[ UIColor whiteColor ] forState : UIControlStateNormal ];
     openButton. titleLabel . textAlignment = NSTextAlignmentCenter ;
@@ -120,32 +121,12 @@
 {
     const zbar_symbol_t *symbol = zbar_symbol_set_first_symbol (symbols. zbarSymbolSet );
     NSString *symbolStr = [ NSString stringWithUTF8String : zbar_symbol_get_data (symbol)];
-    //判断是否包含 头'http:'
-    NSString *regex = @"http+:[^//s]*" ;
-    NSPredicate *predicate = [ NSPredicate predicateWithFormat : @"SELF MATCHES %@" ,regex];
-    UIAlertView *alertView=[[ UIAlertView alloc ] initWithTitle : @"" message :symbolStr delegate : nil cancelButtonTitle : @"取消" otherButtonTitles : nil ];
-    [alertView show ];
-    //判断是否包含 头'ssid:'
-    NSString *ssid = @"ssid+:[^//s]*" ;;
-    NSPredicate *ssidPre = [ NSPredicate predicateWithFormat : @"SELF MATCHES %@" ,ssid];
-    if ([predicate evaluateWithObject :symbolStr]) {
-    }
-    else if ([ssidPre evaluateWithObject :symbolStr]){
-        NSArray *arr = [symbolStr componentsSeparatedByString : @";" ];
-        NSArray * arrInfoHead = [[arr objectAtIndex : 0 ] componentsSeparatedByString : @":" ];
-        NSArray * arrInfoFoot = [[arr objectAtIndex : 1 ] componentsSeparatedByString : @":" ];
-        symbolStr = [ NSString stringWithFormat : @"ssid: %@ /n password:%@" ,
-                     [arrInfoHead objectAtIndex : 1 ],[arrInfoFoot objectAtIndex : 1 ]];
-        UIPasteboard *pasteboard=[ UIPasteboard generalPasteboard ];
-        //然后，可以使用如下代码来把一个字符串放置到剪贴板上：
-        pasteboard. string = [arrInfoFoot objectAtIndex : 1 ];
-    }
+    self.block(symbolStr);
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - ( void )backToLoginForm
 {
-    LoginViewController *loginView = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-    [self presentModalViewController:loginView animated:YES];
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -153,9 +134,11 @@
 {
     if ( _readerView . torchMode == 0 ) {
         _readerView . torchMode = 1 ;
+        [openButton setTitle : @"关闭闪光灯" forState: UIControlStateNormal ];
     } else
     {
         _readerView . torchMode = 0 ;
+        [openButton setTitle : @"开启闪光灯" forState: UIControlStateNormal ];
     }
 }
 - ( void )viewWillDisappear:( BOOL )animated
@@ -167,6 +150,7 @@
     [ self stopTimer ];
     [ _readerView stop ];
 }
+
 //二维码的横线移动
 - ( void )moveUpAndDownLine
 {

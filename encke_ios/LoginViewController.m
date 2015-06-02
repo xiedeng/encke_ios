@@ -66,25 +66,14 @@
 {
     ScannerController *scanner = [ScannerController new];
     [self presentModalViewController:scanner animated:YES];
-    //返回
-    [self dismissModalViewControllerAnimated:YES];
-//    ZBarReaderViewController * reader = [ZBarReaderViewController new];
-//    reader.readerDelegate = self;
-//    ZBarImageScanner * scanner = reader.scanner;
-//    for (UIView *temp in [reader.view subviews]) {
-//        for (UIView *v in [temp subviews]) {
-//            if ([v isKindOfClass:[UIToolbar class]]) {
-//                for (UIView *ev in [v subviews]) {
-//                    [ev removeFromSuperview];
-//                }
-//            }
-//        }
-//    }
-//    [scanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
-//    
-//    reader.showsZBarControls = YES;
-//    
-//    [self presentViewController:reader animated:YES completion:nil];
+    scanner.block = ^(NSString *str){
+            NSArray *infos = [str componentsSeparatedByString:@"|"];
+            if (infos == nil || [infos count] != 2) {
+                return;
+            }
+            txt_loginUrl.text = [infos objectAtIndex:0];
+            txt_username.text = [infos objectAtIndex:1];
+    };
 }
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -147,9 +136,6 @@
         // Override point for customization after application launch.Ui
         RootViewController *rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rootController"];
         [self presentModalViewController:rootViewController animated:YES];
-        //返回
-        [self dismissModalViewControllerAnimated:YES];
-        
     }else{
         [self showAlert:@"用户名或密码错误"];
     }
