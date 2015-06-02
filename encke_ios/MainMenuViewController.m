@@ -10,6 +10,7 @@
 #import "DeviceListViewController.h"
 #import "ProximaViewController.h"
 #import "UIViewController+RESideMenu.h"
+#import "LoginViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -55,9 +56,22 @@
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
+        case 4:
+            [self destoryLoginInfo];
+            break;
         default:
             break;
     }
+}
+
+- (void) destoryLoginInfo{
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"loginUrl"];
+    LoginViewController *loginView = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+    [self presentModalViewController:loginView animated:YES];
+    //返回
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -

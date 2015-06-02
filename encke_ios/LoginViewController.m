@@ -1,42 +1,47 @@
 //
-//  ViewController.m
+//  LoginViewController.m
 //  encke_ios
 //
-//  Created by Michael on 14/12/2.
-//  Copyright (c) 2014年 MichaelTse. All rights reserved.
+//  Created by Michael on 15/3/27.
+//  Copyright (c) 2015年 MichealXie. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 #import "HttpUtils.h"
 #import "JsonUtils.h"
 #import "LoginInfo.h"
 #import "User.h"
 #import "RootViewController.h"
+#import "ScannerController.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad
 {
     txt_password.secureTextEntry = YES;
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Stars"]]];
+//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Stars"]]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     [super viewDidLoad];
-    [self initUserInfo];
+    [self initInfo];
+}
+
+- (void) initInfo{
+    
 }
 
 - (void) initUserInfo
 {
-//    NSString* username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-//    NSString* password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-//    NSString* loginUrl = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginUrl"];
-//    txt_username.text = username;
-//    txt_password.text = password;
-//    txt_loginUrl.text = loginUrl;
-//    [self loginSystem];
+    NSString* username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSString* password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+    NSString* loginUrl = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginUrl"];
+    txt_username.text = username;
+    txt_password.text = password;
+    txt_loginUrl.text = loginUrl;
+    [self loginSystem];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,30 +64,43 @@
 
 -(IBAction) scan:(id)sender
 {
-    ZBarReaderViewController * reader = [ZBarReaderViewController new];
-    reader.readerDelegate = self;
-    ZBarImageScanner * scanner = reader.scanner;
-    [scanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
-    
-    reader.showsZBarControls = YES;
-    
-    [self presentViewController:reader animated:YES completion:nil];
+    ScannerController *scanner = [ScannerController new];
+    [self presentModalViewController:scanner animated:YES];
+    //返回
+    [self dismissModalViewControllerAnimated:YES];
+//    ZBarReaderViewController * reader = [ZBarReaderViewController new];
+//    reader.readerDelegate = self;
+//    ZBarImageScanner * scanner = reader.scanner;
+//    for (UIView *temp in [reader.view subviews]) {
+//        for (UIView *v in [temp subviews]) {
+//            if ([v isKindOfClass:[UIToolbar class]]) {
+//                for (UIView *ev in [v subviews]) {
+//                    [ev removeFromSuperview];
+//                }
+//            }
+//        }
+//    }
+//    [scanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
+//    
+//    reader.showsZBarControls = YES;
+//    
+//    [self presentViewController:reader animated:YES completion:nil];
 }
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
-    ZBarSymbol * symbol;
-    for(symbol in results)
-        break;
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    NSString *str = symbol.data;
-    NSArray *infos = [str componentsSeparatedByString:@"|"];
-    if (infos == nil || [infos count] != 2) {
-        return;
-    }
-    txt_loginUrl.text = [infos objectAtIndex:0];
-    txt_username.text = [infos objectAtIndex:1];
+//    id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
+//    ZBarSymbol * symbol;
+//    for(symbol in results)
+//        break;
+//    [picker dismissViewControllerAnimated:YES completion:nil];
+//    NSString *str = symbol.data;
+//    NSArray *infos = [str componentsSeparatedByString:@"|"];
+//    if (infos == nil || [infos count] != 2) {
+//        return;
+//    }
+//    txt_loginUrl.text = [infos objectAtIndex:0];
+//    txt_username.text = [infos objectAtIndex:1];
     
 }
 
