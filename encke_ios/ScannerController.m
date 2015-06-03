@@ -108,6 +108,7 @@
     openButton. titleLabel . textAlignment = NSTextAlignmentCenter ;
     openButton. backgroundColor =[ UIColor grayColor ];
     openButton. titleLabel . font =[ UIFont systemFontOfSize : 22.0 ];
+    openButton.layer.cornerRadius = 5;
     [openButton addTarget : self action : @selector (openLight) forControlEvents : UIControlEventTouchUpInside ];
     [darkView addSubview :openButton];
     //画中间的基准线

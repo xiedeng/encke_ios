@@ -22,15 +22,15 @@
 
 - (void)viewDidLoad
 {
-    txt_password.secureTextEntry = YES;
-//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Stars"]]];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     [super viewDidLoad];
     [self initInfo];
 }
 
 - (void) initInfo{
-    
+    txt_password.secureTextEntry = YES;
+    //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Stars"]]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    btn_login.layer.cornerRadius = 5;
 }
 
 - (void) initUserInfo
@@ -74,23 +74,6 @@
             txt_loginUrl.text = [infos objectAtIndex:0];
             txt_username.text = [infos objectAtIndex:1];
     };
-}
-
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-//    id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
-//    ZBarSymbol * symbol;
-//    for(symbol in results)
-//        break;
-//    [picker dismissViewControllerAnimated:YES completion:nil];
-//    NSString *str = symbol.data;
-//    NSArray *infos = [str componentsSeparatedByString:@"|"];
-//    if (infos == nil || [infos count] != 2) {
-//        return;
-//    }
-//    txt_loginUrl.text = [infos objectAtIndex:0];
-//    txt_username.text = [infos objectAtIndex:1];
-    
 }
 
 -(void) showAlert:(NSString *) message
