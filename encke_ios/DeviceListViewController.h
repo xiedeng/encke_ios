@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
 
-@interface DeviceListViewController : UIViewController
+@interface DeviceListViewController : UIViewController{
+    
+    __weak IBOutlet UITableView *menuView;
+    
+}
 
 @end

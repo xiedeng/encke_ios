@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adg-oz-fqt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="234"/>
+            <point key="canvasLocation" x="498" y="273"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kca-d4-fGq">
@@ -176,13 +176,16 @@
                             </tableView>
                         </subviews>
                     </view>
-                    <navigationItem key="navigationItem" title="设备列表" id="gF5-Oj-EFx">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="zF1-i6-9Dw">
+                    <navigationItem key="navigationItem" title="区域中心" id="gF5-Oj-EFx">
+                        <barButtonItem key="leftBarButtonItem" title="菜单" id="zF1-i6-9Dw">
                             <connections>
                                 <action selector="presentLeftMenuViewController:" destination="ecm-Ac-PJB" id="Qga-bk-Exf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="menuView" destination="ss1-tw-3A5" id="siH-9d-aBj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csv-7a-6XR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

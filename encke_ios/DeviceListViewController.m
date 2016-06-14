@@ -14,4 +14,22 @@
 
 @implementation DeviceListViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self initInfo];
+}
+
+- (void)initInfo
+{
+    UITableViewCell *tableCell = [UITableViewCell init];
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 @end

@@ -425,6 +425,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MichealXie;
 				TargetAttributes = {
+					4CE4F39D1A2E01F300EFCB8C = {
+						DevelopmentTeam = ZPNMC28QP3;
+					};
 					4CE4F3BE1A2E01F300EFCB8C = {
 						TestTargetID = 4CE4F39D1A2E01F300EFCB8C;
 					};
@@ -620,7 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: li hongtao (K48FHKFDF3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "encke_ios/encke_ios-Prefix.pch";
 				INFOPLIST_FILE = "encke_ios/encke_ios-Info.plist";
@@ -641,7 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: li hongtao (K48FHKFDF3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "encke_ios/encke_ios-Prefix.pch";
 				INFOPLIST_FILE = "encke_ios/encke_ios-Info.plist";
